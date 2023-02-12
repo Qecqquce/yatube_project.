@@ -1,15 +1,18 @@
 {% extends 'base.html' %}
 {% block content %}
 
-    <main>
-      <!-- класс py-5 создает отступы сверху и снизу блока -->
-      <div class="container py-5">
-        <h1></h1>
-        <p>
-
-        </p>
-        <article>
-         {{ text }}
-        </article>
+{% for group in groups %}
+<ul>
+  <li>
+    Автор: {{ group.author.get_full_name }}
+  </li>
+  <li>
+    Дата публикации: {{ group.pub_date|date:"d E Y" }}
+  </li>
+</ul>
+<p>{{ group.text }}</p>
+<a href="">все записи группы</a>
+{% if not forloop.last %}<hr>{% endif %}
+{% endfor %}
 
        {% endblock %}
