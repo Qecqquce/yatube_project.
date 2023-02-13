@@ -16,7 +16,7 @@ class Post(models.Model):
 
 class Group(models.Model):
     title = models.CharField(max_length=50)
-    adress_slug = models.CharField(max_length=50)
+    slug = models.SlugField(unique=True, blank=True, null=True)
     description = models.CharField(max_length=50)
 
 
