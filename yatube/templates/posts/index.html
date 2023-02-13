@@ -1,9 +1,11 @@
 {% extends 'base.html' %}
 
 {%block content%}
-
+<div class="container py-5">
+  <h1>Последние обновления на сайте</h1>
       <!-- класс py-5 создает отступы сверху и снизу блока -->
       {% for post in posts %}
+
       <ul>
         <li>
           Автор: {{ post.author.get_full_name }}
